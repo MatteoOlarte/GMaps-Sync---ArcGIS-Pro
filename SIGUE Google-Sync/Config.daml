@@ -1,0 +1,97 @@
+﻿<ArcGIS
+  defaultAssembly="SIGUE Google-Sync.dll"
+  defaultNamespace="GMapsSync"
+  xmlns="http://schemas.esri.com/DADF/Registry"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///D:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd"
+>
+  <AddInInfo
+    id="{fdfbf666-0e6a-46ce-94d5-522d904b1c3b}"
+    version="1.0.1"
+    desktopVersion="3.3.52636"
+  >
+    <Name>SIGUE_Google_Sync</Name>
+    <Description>SIGUE_Google_Sync description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>mateo</Author>
+    <Company>EAAB</Company>
+    <Date>8/14/2025 11:00:00 AM</Date>
+    <Subject>Framework</Subject>
+  </AddInInfo>
+
+  <conditions>
+    <insertCondition id="GMapsSync_streetView_condition">
+      <state id="esri_mapping_mapPane" />
+    </insertCondition>
+  </conditions>
+
+  <modules>
+    <insertModule
+      id="SIGUE_Google_Sync_Module"
+      className="GMapsSync.MainModule"
+      autoLoad="false"
+      caption="Module1"
+    >
+      <tabs>
+        <tab id="EAAB_Tab" caption="EAAB" keytip="Empresa de Acueducto y Alcantarillado de Bogotá">
+          <group refID="GMapsSync_Group" />
+        </tab>
+      </tabs>
+
+      <groups>
+        <group id="GMapsSync_Group" caption="SIGUE Google-Sync" keytip="GMapsSync_Group">
+          <tool refID="GMapsSync_StreetViewTool" size="large" />
+
+          <button refID="GMapsSync_ArcGISGoogleMapsSyncButton" size="middle" />
+
+          <button refID="GMapsSync_GoogleMapsArcGISSyncButton" size="middle" />
+        </group>
+      </groups>
+
+      <controls>
+        <tool
+          id="GMapsSync_StreetViewTool"
+          caption="Street View"
+          className="Controls.StreetViewTool"
+          loadOnClick="true"
+          smallImage="Images\AddInDesktop16.png"
+          largeImage="Images\AddInDesktop32.png"
+          condition="esri_mapping_mapPane"
+          keytip="GMapsSync_StreetViewTool"
+        >
+          <tooltip heading="Abrir en Google Street View">
+            Permite seleccionar un punto en el mapa y abrir esa ubicación en Google Street View.
+          </tooltip>
+        </tool>
+
+        <button
+          id="GMapsSync_ArcGISGoogleMapsSyncButton"
+          caption="Sync to Maps"
+          className="Controls.ArcGISGoogleMapsSyncButton"
+          loadOnClick="true"
+          smallImage="Images\AddInDesktop16.png"
+          largeImage="Images\AddInDesktop32.png"
+          keytip="GMapsSync_ArcGISGoogleMapsSyncButton"
+        >
+          <tooltip heading="Sincronizar con Google Maps">
+            Sincroniza la vista o datos actuales de ArcGIS con Google Maps.
+          </tooltip>
+        </button>
+
+        <button
+          id="GMapsSync_GoogleMapsArcGISSyncButton"
+          caption="Sync to ArcGIS"
+          className="Controls.GoogleMapsArcGISSyncButton"
+          loadOnClick="true"
+          smallImage="Images\AddInDesktop16.png"
+          largeImage="Images\AddInDesktop32.png"
+          keytip="GMapsSync_GoogleMapsArcGISSyncButton"
+        >
+          <tooltip heading="Sincronizar con ArcGIS">
+            Sincroniza la vista o datos actuales de Google Maps con ArcGIS Pro.
+          </tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -1,0 +1,55 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+
+# NuGet
+*.nupkg
+# NuGet Packages folder can be ignored if not using package restore
+#packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Windows image file caches
+Thumbs.db
+Desktop.ini
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+
+# Add-In output
+*.esriAddInX
+
+# Visual Studio Code
+.vscode/**
+!.vscode/settings.json
+
+# Others
+*.dbmdl
+*.bak
+*.cache
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
