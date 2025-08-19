@@ -17,7 +17,7 @@
     "SIGUE Google-Sync/Config.daml",
     "SIGUE Google-Sync/SIGUE Google-Sync.csproj"
   ],
-  "cSpell.words": ["Addin"],
+  "cSpell.words": ["Addin", "EPSG"],
   "files.autoSave": "afterDelay",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {

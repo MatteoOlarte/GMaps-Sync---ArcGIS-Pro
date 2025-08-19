@@ -7,10 +7,10 @@
 >
   <AddInInfo
     id="{fdfbf666-0e6a-46ce-94d5-522d904b1c3b}"
-    version="1.0.1"
+    version="1.0.3"
     desktopVersion="3.3.52636"
   >
-    <Name>SIGUE_Google_Sync</Name>
+    <Name>SIGUE Google-Sync</Name>
     <Description>SIGUE_Google_Sync description</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>mateo</Author>
