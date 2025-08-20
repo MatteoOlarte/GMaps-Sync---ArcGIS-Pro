@@ -15,19 +15,19 @@
     <Date>8/14/2025 11:00:00 AM</Date>
     <Subject>Framework</Subject>
   </AddInInfo>
-<!-- 
+  
   <propertySheets>
     <updateSheet refID="esri_core_optionsPropertySheet">
-      <insertPage 
-        className="" 
-        id="GMapsSync_ConfigSheet" 
+      <insertPage
+        className="Presentation.ViewModel.PropertyPageViewModel"
+        id="GMapsSync_PropertyPage"
         caption="SIGUE Google-Sync"
         group="Application"
       >
-
+        <content className="Presentation.View.PropertyPageView" />
       </insertPage>
     </updateSheet>
-  </propertySheets> -->
+  </propertySheets>
 
   <conditions>
     <insertCondition id="GMapsSync_streetView_condition">
