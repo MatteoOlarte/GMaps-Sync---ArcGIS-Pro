@@ -1,7 +1,8 @@
-﻿namespace GMapsSync.Controls;
+﻿namespace GMapsSync.Presentation.View;
+
+#nullable enable
 
 using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -10,17 +11,19 @@ using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
-#nullable enable
+using GMapsSync.Presentation.ViewModel;
 
-internal class StreetViewTool : MapTool
+internal sealed class StreetViewTool : MapTool
 {
-    private record Cords(double Latitude, double Longitude, double Heading);
+    private readonly StreetViewViewModel viewModel;
     private MapPoint? point0, point1;
     private bool isMousePressed, isDrawingLine;
     private IDisposable? pointGraphic, lineGraphic;
 
+
     public StreetViewTool()
     {
+        this.viewModel = new StreetViewViewModel();
         this.point0 = null;
         this.point1 = null;
         this.isMousePressed = false;
@@ -66,7 +69,6 @@ internal class StreetViewTool : MapTool
                 8,
                 SimpleMarkerStyle.Cross
             );
-
             var symbolReference = new CIMSymbolReference
             {
                 Symbol = pointSymbol
@@ -82,7 +84,6 @@ internal class StreetViewTool : MapTool
         {
             return;
         }
-
         if (!this.isDrawingLine)
         {
             this.isDrawingLine = true;
@@ -111,8 +112,7 @@ internal class StreetViewTool : MapTool
 
             if (point0 is not null && point1 is not null)
             {
-                var cords = this.CalculateStreetViewParams(this.point0, this.point1);
-                this.OpenGoogleStreetView(cords);
+                this.viewModel.LaunchStreetView(point0, point1);
             }
         });
     }
@@ -151,38 +151,6 @@ internal class StreetViewTool : MapTool
             ];
 
             this.lineGraphic = MapView.Active.AddOverlay(polyline, new CIMSymbolReference { Symbol = lineSymbol });
-        });
-    }
-
-    private Cords CalculateStreetViewParams(MapPoint start, MapPoint end)
-    {
-        // Calcular el ángulo entre los dos puntos
-        double deltaX = end.X - start.X;
-        double deltaY = end.Y - start.Y;
-        double angleRadians = Math.Atan2(deltaX, deltaY);
-
-        // Convertir a grados y ajustar al rango 0-360
-        double angleDegrees = angleRadians * (180.0 / Math.PI);
-        if (angleDegrees < 0) angleDegrees += 360.0;
-
-        // Transformar el punto inicial a WGS84 (EPSG:4326)
-        var spatialReference = SpatialReferenceBuilder.CreateSpatialReference(4326);
-        var transformedGeometry = GeometryEngine.Instance.Project(start, spatialReference);
-
-        if (transformedGeometry is not MapPoint transformedPoint)
-            throw new InvalidOperationException("Error al transformar coordenadas.");
-
-        return new Cords(transformedPoint.Y, transformedPoint.X, angleDegrees);
-    }
-
-    private void OpenGoogleStreetView(Cords p)
-    {
-        var url = $"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={p.Latitude},{p.Longitude}&heading={p.Heading}&pitch=0&fov=120";
-        
-        Process.Start(new ProcessStartInfo
-        {
-            FileName = url,
-            UseShellExecute = true
         });
     }
 }

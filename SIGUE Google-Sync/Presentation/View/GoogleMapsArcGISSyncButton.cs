@@ -1,8 +1,8 @@
-﻿namespace GMapsSync.Controls;
+namespace GMapsSync.Presentation.View;
 
 using ArcGIS.Desktop.Framework.Contracts;
 
-internal class ArcGISGoogleMapsSyncButton : Button
+internal class GoogleMapsArcGISSyncButton : Button
 {
     protected override void OnClick()
     {

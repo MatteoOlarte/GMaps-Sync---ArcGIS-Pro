@@ -26,5 +26,6 @@
   },
   "files.associations": {
     "*.daml": "xml"
-  }
+  },
+  "xml.format.maxLineWidth": 180
 }
