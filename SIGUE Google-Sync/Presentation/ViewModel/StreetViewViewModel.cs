@@ -5,7 +5,8 @@ using System;
 using ArcGIS.Core.Geometry;
 
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+
+using UseCases = Application.UseCases.WebDriver;
 
 internal sealed class StreetViewViewModel
 {
@@ -14,8 +15,7 @@ internal sealed class StreetViewViewModel
 
     public StreetViewViewModel()
     {
-        var path = @"C:\Users\molarte\PycharmProjects\QGIS-StreetView\gmaps_sigue\drivers\chromedriver.exe";
-        this.driver = new ChromeDriver(path);
+        this.driver = UseCases.GetWebDriver.Invoke();
     }
 
     public void LaunchStreetView(MapPoint x, MapPoint y)
@@ -26,6 +26,9 @@ internal sealed class StreetViewViewModel
         var h = cords.Heading.ToString(System.Globalization.CultureInfo.InvariantCulture);
         var url = $"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={lat},{lon}&heading={h}&pitch=0&fov=120";
         this.driver.Navigate().GoToUrl(url);
+
+        MainModule.Settings.Set("web_browser", url);
+        MainModule.Settings.Set("driver_path", "chrome");
     }
 
     private Cords CalculateParams(MapPoint start, MapPoint end)

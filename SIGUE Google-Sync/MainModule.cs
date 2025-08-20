@@ -3,14 +3,19 @@
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 
+using GMapsSync.Application.Services;
+
 internal class MainModule : Module
 {
     private static MainModule _this = null;
+    private static Settings _settings = null;
 
     /// <summary>
     /// Retrieve the singleton instance to this module here
     /// </summary>
     public static MainModule Current => _this ??= (MainModule)FrameworkApplication.FindModule("SIGUE_Google_Sync_Module");
+
+    public static Settings Settings => _settings ??= new Settings();
 
     #region Overrides
     /// <summary>
@@ -33,4 +38,3 @@ internal class MainModule : Module
     }
     #endregion Overrides
 }
-

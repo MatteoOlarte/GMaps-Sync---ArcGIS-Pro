@@ -17,7 +17,7 @@
     "SIGUE Google-Sync/Config.daml",
     "SIGUE Google-Sync/SIGUE Google-Sync.csproj"
   ],
-  "cSpell.words": ["Addin", "EPSG"],
+  "cSpell.words": ["Addin", "EAAB", "EPSG"],
   "files.autoSave": "afterDelay",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
@@ -25,7 +25,8 @@
     "source.removeUnused": "explicit"
   },
   "files.associations": {
-    "*.daml": "xml"
+    "*.daml": "xml",
+    "*.xaml": "xml"
   },
   "xml.format.maxLineWidth": 180
 }
