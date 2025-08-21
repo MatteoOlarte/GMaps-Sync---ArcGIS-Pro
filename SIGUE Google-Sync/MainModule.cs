@@ -26,5 +26,6 @@ internal class MainModule : Module
     protected override void Uninitialize()
     {
         base.Uninitialize();
+        Application.Services.WebDriverHelper.CloseAll(); // Ensure all WebDriver instances are closed
     }
 }
