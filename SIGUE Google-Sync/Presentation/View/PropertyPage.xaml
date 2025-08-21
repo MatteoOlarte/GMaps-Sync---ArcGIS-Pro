@@ -7,8 +7,8 @@
     xmlns:ui="clr-namespace:GMapsSync.Presentation.ViewModel"
     xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
     mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="300"
+    d:DesignHeight="600"
+    d:DesignWidth="600"
     d:DataContext="{Binding Path=ui.PropertyPageViewModel}"
 >
     <UserControl.Resources>
@@ -18,23 +18,78 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
+
     <Grid Margin="10,10,10,10" Grid.IsSharedSizeScope="True">
-        <StackPanel Orientation="Vertical" Margin="0,0,0,10">
-            <TextBlock Text="Set Options for sharing" Style="{DynamicResource Esri_TextBlockH3}" Margin="0,0,0,10" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,10">
-                <TextBlock Text="Navegador:" Style="{DynamicResource Esri_TextBlockRegular}" VerticalAlignment="Center" Width="120" />
-                <ComboBox Width="180" SelectedIndex="0">
-                    <ComboBoxItem Content="Google Chrome" />
-                    <ComboBoxItem Content="Firefox" />
-                </ComboBox>
-            </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                <TextBlock Text="Seleccionar driver:" Style="{DynamicResource Esri_TextBlockRegular}" VerticalAlignment="Center" Width="120" />
-                <TextBox x:Name="HomeFolderTextBox" Margin="0,0,5,0" Width="180" Height="22" />
-                <Button Content="..." Width="30" Height="22" Style="{DynamicResource Esri_Button}" />
-            </StackPanel>
-        </StackPanel>
+        <TextBlock
+            Text="Preferencias de Driver y Navegador"
+            Style="{DynamicResource Esri_TextBlockH3}"
+            Margin="0,0,0,10"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+        />
+
+        <TextBlock
+            x:Name="txtBrowserLabel"
+            Text="Navegador:"
+            Style="{DynamicResource Esri_TextBlockRegular}"
+            Margin="0,0,0,5"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+        />
+
+        <ComboBox
+            x:Name="cmbBrowser"
+            Margin="0,0,0,10"
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            ItemsSource="{Binding Browsers}"
+            SelectedItem="{Binding SelectedBrowser, Mode=TwoWay}"
+        />
+
+        <TextBlock
+            x:Name="txtDriverLabel"
+            Text="Seleccionar driver:"
+            Style="{DynamicResource Esri_TextBlockRegular}"
+            Margin="0,0,0,5"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+        />
+
+        <TextBox
+            x:Name="txtDriverPath"
+            Margin="0"
+            Height="25"
+            Grid.Row="4"
+            Grid.Column="0"
+            IsReadOnly="True"
+            Text="{Binding DriverPath, Mode=TwoWay}" />
+
+        <Button
+            x:Name="btnBrowseDriver"
+            Content="..."
+            Margin="0"
+            Style="{DynamicResource Esri_Button}"
+            Grid.Row="4"
+            Grid.Column="2"
+            Command="{Binding BrowseDriverCommand}"
+        />
     </Grid>
 </UserControl>

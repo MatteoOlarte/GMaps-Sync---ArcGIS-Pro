@@ -3,25 +3,16 @@
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 
-using GMapsSync.Application.Services;
+using GMapsSync.Core;
 
 internal class MainModule : Module
 {
     private static MainModule _this = null;
-    private static Settings _settings = null;
-
-    /// <summary>
-    /// Retrieve the singleton instance to this module here
-    /// </summary>
+    private static Settings _settings = Settings.Default;
     public static MainModule Current => _this ??= (MainModule)FrameworkApplication.FindModule("SIGUE_Google_Sync_Module");
+    public static Settings Settings => _settings;
 
-    public static Settings Settings => _settings ??= new Settings();
 
-    #region Overrides
-    /// <summary>
-    /// Called by Framework when ArcGIS Pro is closing
-    /// </summary>
-    /// <returns>False to prevent Pro from closing, otherwise True</returns>
     protected override bool CanUnload()
     {
         return true;
@@ -36,5 +27,4 @@ internal class MainModule : Module
     {
         base.Uninitialize();
     }
-    #endregion Overrides
 }
