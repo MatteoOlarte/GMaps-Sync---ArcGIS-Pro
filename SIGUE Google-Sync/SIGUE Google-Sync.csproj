@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <Content Include="Config.daml" />
-    <Content Include="Images\AddInDesktop16.png" />
+    <Content Include="Images\AddInDesktop16.spng" />
     <Content Include="Images\AddInDesktop32.png" />
     <Content Include="DarkImages\AddInDesktop16.png" />
     <Content Include="DarkImages\AddInDesktop32.png" />
@@ -23,10 +23,12 @@
     <Content Include="Images\StreetViewTool32.png" />
     <Content Include="DarkImages\StreetViewTool16.png" />
     <Content Include="DarkImages\StreetViewTool32.png" />
-    <Content Include="Images\MapSearchTool16.png" />
-    <Content Include="Images\MapSearchTool32.png" />
-    <Content Include="DarkImages\MapSearchTool16.png" />
-    <Content Include="DarkImages\MapSearchTool32.png" />
+    <Content Include="Images\OpenInBrowser16.png" />
+    <Content Include="Images\OpenInBrowser32.png" />
+    <Content Include="DarkImages\BrowserUpdated16.png" />
+    <Content Include="DarkImages\BrowserUpdated32.png" />
+    <Content Include="Images\BrowserUpdated16.png" />
+    <Content Include="Images\BrowserUpdated32.png" />
   </ItemGroup>
 
   <ItemGroup>

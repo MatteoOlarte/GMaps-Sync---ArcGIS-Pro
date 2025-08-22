@@ -6,7 +6,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd"
 >
-  <AddInInfo id="{fdfbf666-0e6a-46ce-94d5-522d904b1c3b}" version="1.0.3" desktopVersion="3.4.55405">
+  <AddInInfo id="{fdfbf666-0e6a-46ce-94d5-522d904b1c3b}" version="1.0.5" desktopVersion="3.4.55405">
     <Name>SIGUE Google-Sync</Name>
     <Description>SIGUE_Google_Sync description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -67,11 +67,11 @@
 
         <button
           id="GMapsSync_ArcGISGoogleMapsSyncButton"
-          caption="Sync to Maps"
+          caption="Abrir en Maps"
           className="Presentation.View.ArcGISGoogleMapsSyncButton"
           loadOnClick="true"
-          smallImage="Images\MapSearchTool16.png"
-          largeImage="Images\MapSearchTool32.png"
+          smallImage="Images\OpenInBrowser16.png"
+          largeImage="Images\OpenInBrowser32.png"
           keytip="GMapsSync_ArcGISGoogleMapsSyncButton"
         >
           <tooltip heading="Sincronizar con Google Maps"> Sincroniza la vista o datos actuales de ArcGIS con Google Maps. </tooltip>
@@ -79,11 +79,11 @@
 
         <button
           id="GMapsSync_GoogleMapsArcGISSyncButton"
-          caption="Sync to ArcGIS"
+          caption="Traer de Maps"
           className="Presentation.View.GoogleMapsArcGISSyncButton"
           loadOnClick="true"
-          smallImage="Images\MapSearchTool16.png"
-          largeImage="Images\MapSearchTool32.png"
+          smallImage="Images\BrowserUpdated16.png"
+          largeImage="Images\BrowserUpdated32.png"
           keytip="GMapsSync_GoogleMapsArcGISSyncButton"
         >
           <tooltip heading="Sincronizar con ArcGIS"> Sincroniza la vista o datos actuales de Google Maps con ArcGIS Pro. </tooltip>

@@ -17,7 +17,7 @@
     "SIGUE Google-Sync/Config.daml",
     "SIGUE Google-Sync/SIGUE Google-Sync.csproj"
   ],
-  "cSpell.words": ["Addin", "EAAB", "EPSG"],
+  "cSpell.words": ["Addin", "EAAB", "EPSG", "Wkid"],
   "files.autoSave": "afterDelay",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
@@ -28,5 +28,6 @@
     "*.daml": "xml",
     "*.xaml": "xml"
   },
-  "xml.format.maxLineWidth": 180
+  "xml.format.maxLineWidth": 180,
+  "csharpOrganizeUsings.removeUnnecessaryUsings": false
 }
