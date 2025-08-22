@@ -15,7 +15,7 @@ using GMapsSync.Presentation.ViewModel;
 
 internal sealed class StreetViewTool : MapTool
 {
-    private readonly StreetViewViewModel viewModel;
+    private readonly StreetViewViewModel? viewModel;
     private MapPoint? point0, point1;
     private bool isMousePressed, isDrawingLine;
     private IDisposable? pointGraphic, lineGraphic;
@@ -23,7 +23,7 @@ internal sealed class StreetViewTool : MapTool
 
     public StreetViewTool()
     {
-        this.viewModel = new StreetViewViewModel();
+        this.viewModel = this.CreateViewModelOrNull();
         this.point0 = null;
         this.point1 = null;
         this.isMousePressed = false;
@@ -45,6 +45,18 @@ internal sealed class StreetViewTool : MapTool
     protected override Task HandleMouseUpAsync(MapViewMouseButtonEventArgs e) => QueuedTask.Run(() => handleMouseUpEvent(e));
 
     protected override void OnToolMouseMove(MapViewMouseEventArgs e) => this.handleMouseMoveEvent(e);
+
+    private StreetViewViewModel? CreateViewModelOrNull()
+    {
+        try
+        {
+            return new();
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
 
     private async void handleMousePressEvent(MapViewMouseButtonEventArgs e)
     {
@@ -109,6 +121,20 @@ internal sealed class StreetViewTool : MapTool
 
             lineGraphic?.Dispose();
             lineGraphic = null;
+
+
+            if (this.viewModel is null)
+            {
+                MessageBox.Show(
+                    "No se pudo inicializar la herramienta de Street View.\n\nVerifique la configuración del navegador y la ruta del driver. Si el problema persiste, contacte al administrador.",
+                    "Error al inicializar Street View",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error,
+                    MessageBoxResult.OK,
+                    MessageBoxOptions.DefaultDesktopOnly
+                );
+                return;
+            }
 
             if (point0 is not null && point1 is not null)
             {

@@ -7,15 +7,13 @@ using GMapsSync.Application.Ext.StringExtensions;
 using GMapsSync.Application.Services;
 using GMapsSync.Core;
 
-using OpenQA.Selenium;
-
 public class GetWebDriver
 {
     public static WebDriverHelper Invoke()
     {
         var path = MainModule.Settings.driver_path;
         var browser = MainModule.Settings.web_browser.ToBrowser();
-
+    
         if (path.IsNullOrEmpty())
         {
             throw new ArgumentException("El camino del driver no puede ser nulo o vacío.", nameof(path));

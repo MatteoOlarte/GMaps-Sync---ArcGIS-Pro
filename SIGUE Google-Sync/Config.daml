@@ -6,7 +6,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd"
 >
-  <AddInInfo id="{fdfbf666-0e6a-46ce-94d5-522d904b1c3b}" version="1.0.5" desktopVersion="3.4.55405">
+  <AddInInfo id="{fdfbf666-0e6a-46ce-94d5-522d904b1c3b}" version="1.0.7" desktopVersion="3.4.55405">
     <Name>SIGUE Google-Sync</Name>
     <Description>SIGUE_Google_Sync description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -21,7 +21,7 @@
       <insertPage
         className="Presentation.ViewModel.PropertyPageViewModel"
         id="GMapsSync_PropertyPage"
-        caption="SIGUE Google-Sync"
+        caption="EAAB Add-In"
         group="Application"
       >
         <content className="Presentation.View.PropertyPageView" />
