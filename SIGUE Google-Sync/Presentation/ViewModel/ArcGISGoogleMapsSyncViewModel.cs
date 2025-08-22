@@ -2,6 +2,8 @@ namespace GMapsSync.Presentation.ViewModel;
 
 #nullable enable
 
+using System;
+
 using ArcGIS.Desktop.Mapping;
 
 using GMapsSync.Application.Ext.EnvelopeExtensions;
@@ -37,7 +39,7 @@ internal class ArcGISGoogleMapsSyncViewModel
             {
                 var centerLat = ((wgs84Extent.YMin + wgs84Extent.YMax) / 2).ToString(System.Globalization.CultureInfo.InvariantCulture);
                 var centerLon = ((wgs84Extent.XMin + wgs84Extent.XMax) / 2).ToString(System.Globalization.CultureInfo.InvariantCulture);
-                var zoom = this.GetZoomLevelFromScale(mapView.Camera.Scale);
+                var zoom = this.CalculateScaleFactor(mapView.Camera.Scale).ToString(System.Globalization.CultureInfo.InvariantCulture);
                 var args = $"{centerLat},{centerLon},{zoom}z";
                 this.driver.GoToUrl($"{this.url}/@{args}");
                 return;
@@ -66,5 +68,10 @@ internal class ArcGISGoogleMapsSyncViewModel
         if (scale > 1000) return 18;
         if (scale > 500) return 19;
         return 20;
+    }
+
+    private double CalculateScaleFactor(double x)
+    {
+        return -1.443 * Math.Log(x) + 29.14;
     }
 }
