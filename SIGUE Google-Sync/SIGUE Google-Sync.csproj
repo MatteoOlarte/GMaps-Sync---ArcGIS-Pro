@@ -25,10 +25,12 @@
     <Content Include="DarkImages\StreetViewTool32.png" />
     <Content Include="Images\OpenInBrowser16.png" />
     <Content Include="Images\OpenInBrowser32.png" />
-    <Content Include="DarkImages\BrowserUpdated16.png" />
-    <Content Include="DarkImages\BrowserUpdated32.png" />
+    <Content Include="DarkImages\OpenInBrowser16.png" />
+    <Content Include="DarkImages\OpenInBrowser32.png" />
     <Content Include="Images\BrowserUpdated16.png" />
     <Content Include="Images\BrowserUpdated32.png" />
+    <Content Include="DarkImages\BrowserUpdated16.png" />
+    <Content Include="DarkImages\BrowserUpdated32.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -129,10 +131,6 @@
       <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Application\UseCases\Settings\" />
   </ItemGroup>
 
   <ItemGroup>

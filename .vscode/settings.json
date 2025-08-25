@@ -28,6 +28,6 @@
     "*.daml": "xml",
     "*.xaml": "xml"
   },
-  "xml.format.maxLineWidth": 180,
+  "xml.format.maxLineWidth": 280,
   "csharpOrganizeUsings.removeUnnecessaryUsings": false
 }

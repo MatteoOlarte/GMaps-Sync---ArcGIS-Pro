@@ -1,15 +1,15 @@
+#nullable enable
+
 namespace GMapsSync.Presentation.ViewModel;
 
 using System;
+using System.Diagnostics;
 
 using ArcGIS.Core.Geometry;
-
-using OpenQA.Selenium;
 
 using GMapsSync.Application.Services;
 
 using UseCases = Application.UseCases.WebDriver;
-
 
 internal sealed class StreetViewViewModel
 {
