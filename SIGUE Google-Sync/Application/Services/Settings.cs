@@ -14,7 +14,7 @@ public class Settings
     public Settings()
     {
         var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        var settingsDir = Path.Combine(appDataPath, "EAAB_AddonSettings");
+        var settingsDir = Path.Combine(appDataPath, "AddonSettings");
 
         Directory.CreateDirectory(settingsDir);
         this._path = Path.Combine(settingsDir, "config.json");

@@ -1,16 +1,17 @@
-namespace GMapsSync.Presentation.ViewModel;
-
 #nullable enable
 
 using System;
 using System.Text.RegularExpressions;
 
 using ArcGIS.Core.Geometry;
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Mapping;
 
 using GMapsSync.Application.Services;
 
-using UseCases = Application.UseCases;
+using UseCases = GMapsSync.Application.UseCases;
+
+namespace GMapsSync.Presentation.ViewModel;
 
 public class GoogleMapsArcGISSyncViewModel
 {
@@ -52,7 +53,7 @@ public class GoogleMapsArcGISSyncViewModel
             view.PanTo(targetPoint);
             return;
         }
-        System.Windows.MessageBox.Show("No se pudieron transformar las coordenadas.", "Error");
+        MessageBox.Show("No se pudieron transformar las coordenadas.", "Error");
     }
 
 
@@ -65,6 +66,12 @@ public class GoogleMapsArcGISSyncViewModel
         return (lat, lon, z);
     }
 
+    private double CalculateScaleFactor(double x)
+    {
+        return 591657550.45 * Math.Pow(Math.E, -0.69 * x);
+    }
+
+    [Obsolete]
     private double GetScaleFromZoomLevel(double value) => value switch
     {
         0.0 => 591657550.5,
@@ -91,9 +98,4 @@ public class GoogleMapsArcGISSyncViewModel
         21.0 => 282.124305,
         _ => 282.124305
     };
-
-    private double CalculateScaleFactor(double x)
-    {
-        return 591657550.45 * Math.Pow(Math.E, -0.69 * x);
-    }
 }

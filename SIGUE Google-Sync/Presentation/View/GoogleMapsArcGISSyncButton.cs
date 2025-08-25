@@ -3,10 +3,10 @@ namespace GMapsSync.Presentation.View;
 #nullable enable
 
 using System;
-using System.Windows;
 
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Framework.Dialogs;
 
 using GMapsSync.Presentation.ViewModel;
 
@@ -39,11 +39,7 @@ internal class GoogleMapsArcGISSyncButton : Button
         {
             MessageBox.Show(
                 "No se pudo inicializar la herramienta.\n\nVerifique la configuración del navegador y la ruta del driver. Si el problema persiste, contacte al administrador.",
-                "Error al inicializar la herramienta",
-                MessageBoxButton.OK,
-                MessageBoxImage.Error,
-                MessageBoxResult.OK,
-                MessageBoxOptions.DefaultDesktopOnly
+                "Error al inicializar la herramienta"
             );
             return;
         }

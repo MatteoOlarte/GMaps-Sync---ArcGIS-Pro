@@ -1,17 +1,19 @@
-﻿namespace GMapsSync.Presentation.View;
-
-#nullable enable
+﻿#nullable enable
 
 using System;
 using System.Threading.Tasks;
-using System.Windows;
 
 using ArcGIS.Core.CIM;
 using ArcGIS.Core.Geometry;
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
 using GMapsSync.Presentation.ViewModel;
+
+using Point = System.Windows.Point;
+
+namespace GMapsSync.Presentation.View;
 
 internal sealed class StreetViewTool : MapTool
 {
@@ -127,11 +129,7 @@ internal sealed class StreetViewTool : MapTool
             {
                 MessageBox.Show(
                     "No se pudo inicializar la herramienta de Street View.\n\nVerifique la configuración del navegador y la ruta del driver. Si el problema persiste, contacte al administrador.",
-                    "Error al inicializar Street View",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error,
-                    MessageBoxResult.OK,
-                    MessageBoxOptions.DefaultDesktopOnly
+                    "Error al inicializar Street View"
                 );
                 return;
             }

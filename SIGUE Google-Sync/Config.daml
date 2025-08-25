@@ -8,11 +8,11 @@
   xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd"
 >
   <AddInInfo id="{fdfbf666-0e6a-46ce-94d5-522d904b1c3b}" version="1.1.0" desktopVersion="3.4.55405">
-    <Name>SIGUE Google-Sync</Name>
-    <Description>Add-In para ArcGIS Pro que permite sincronizar vistas y ubicaciones entre ArcGIS y Google Maps, incluyendo acceso directo a Street View. Desarrollado para la Empresa de Acueducto y Alcantarillado de Bogotá (EAAB).</Description>
+    <Name>GMaps</Name>
+    <Description>Add-In para ArcGIS Pro que permite sincronizar vistas y ubicaciones entre ArcGIS y Google Maps, incluyendo acceso directo a Street View.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>EAAB</Author>
-    <Company>Empresa de Acueducto y Alcantarillado de Bogotá</Company>
+    <Author></Author>
+    <Company></Company>
     <Date>8/14/2025 11:00:00 AM</Date>
     <Subject>Framework</Subject>
   </AddInInfo>

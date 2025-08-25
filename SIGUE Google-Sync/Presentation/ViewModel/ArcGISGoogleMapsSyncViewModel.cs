@@ -1,15 +1,16 @@
-namespace GMapsSync.Presentation.ViewModel;
-
 #nullable enable
 
 using System;
 
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Mapping;
 
 using GMapsSync.Application.Ext.EnvelopeExtensions;
 using GMapsSync.Application.Services;
 
-using UseCases = Application.UseCases;
+using UseCases = GMapsSync.Application.UseCases;
+
+namespace GMapsSync.Presentation.ViewModel;
 
 internal class ArcGISGoogleMapsSyncViewModel
 {
@@ -45,9 +46,15 @@ internal class ArcGISGoogleMapsSyncViewModel
                 return;
             }
         }
-        System.Windows.MessageBox.Show("No hay una vista de mapa activa o no se pudo transformar la extensión a WGS84.", "Error");
+        MessageBox.Show("No hay una vista de mapa activa o no se pudo transformar la extensión a WGS84.", "Error");
     }
 
+    private double CalculateScaleFactor(double x)
+    {
+        return -1.443 * Math.Log(x) + 29.14;
+    }
+
+    [Obsolete]
     private int GetZoomLevelFromScale(double scale)
     {
         if (scale > 100000000) return 3;
@@ -68,10 +75,5 @@ internal class ArcGISGoogleMapsSyncViewModel
         if (scale > 1000) return 18;
         if (scale > 500) return 19;
         return 20;
-    }
-
-    private double CalculateScaleFactor(double x)
-    {
-        return -1.443 * Math.Log(x) + 29.14;
     }
 }
