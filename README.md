@@ -107,7 +107,7 @@ Sigue estos pasos:
 
       - Para Firefox: geckodriver.exe
 
-![add-ln](docs\images\project-options-gmaps.png) 
+![add-ln](docs/images/project-options-gmaps.png) 
 
 4. Verificar la configuración:
 
@@ -145,7 +145,7 @@ Pasos para usar:
 
 Resultado: Se abrirá automáticamente una ventana de su navegador predeterminado (Chrome/Firefox) mostrando la vista de Google Street View para la ubicación y dirección seleccionadas.
 
-![muestra](docs\images\muestra.png)
+![muestra](docs/images/muestra.png)
 
 
 #### 2. Sincronización en tiempo real: ArcGIS Pro - Google Maps
