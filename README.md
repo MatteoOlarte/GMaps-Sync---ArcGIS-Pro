@@ -1,82 +1,60 @@
-# GMaps-Sync para ArcGIS Pro
+# GMaps-Sync para ArcGIS Pro 
 
 Un Add-In para ArcGIS Pro que potencia tu experiencia de mapeo integrando Google Street View y sincronizando la vista con Google Maps de forma bidireccional. Explora, navega y compara ubicaciones en tiempo real, todo desde la comodidad de tu entorno de ArcGIS Pro.
 
 > [!note]
 > Este Add-In no integra Google Maps como un navegador embebido dentro de ArcGIS Pro. Al abrir Street View o sincronizar la vista, se abrirá una ventana de navegador aparte.
 
-## Características principales
-
-### 1. Street View
-
-| Modo Claro                                                                  | Modo Oscuro                                                                     |
-| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| ![Herramienta Street View](SIGUE%20Google-Sync/Images/StreetViewTool32.png) | ![Herramienta Street View](SIGUE%20Google-Sync/DarkImages/StreetViewTool32.png) |
-
-Esta herramienta permite seleccionar un punto en el mapa y la dirección de visualización. Al confirmar, Google Street View se abre en una ventana aparte, mostrando la ubicación y orientación seleccionadas.
-
-#### ¿Como usar esta herramienta?
-
-![Street View](docs/images/StreetView-GIF.gif)
-
-1. Selecciona la herramienta "Street View" de la pestaña GMaps.
-2. Haz clic en el mapa donde quieras iniciar la vista.
-3. Sin soltar el botón del ratón, arrastra para definir la dirección de visualización.
-4. Al soltar, se abrirá Google Street View en tu navegador web predeterminado.
-
-### 2. ArcGIS - Google Maps sync
-
-| Modo Claro                                                       | Modo Oscuro                                                          |
-| ---------------------------------------------------------------- | -------------------------------------------------------------------- |
-| ![Abrir en Maps](SIGUE%20Google-Sync/Images/OpenInBrowser32.png) | ![Abrir en Maps](SIGUE%20Google-Sync/DarkImages/OpenInBrowser32.png) |
-
-Con esta herramienta, el usuario puede sincronizar la vista actual de ArcGIS Pro con Google Maps. Al activarla, se abre una ventana de navegador mostrando la misma ubicación y nivel de zoom que tiene el mapa en ArcGIS Pro.
-
-#### ¿Como usar esta herramienta?
-
-![ArcGIS - Google Maps sync](docs/images/ArcGIS-GMaps-GIF.gif)
-
-1. Haz clic en el botón "Abrir en Maps".
-2. Se abrirá Google Maps en tu navegador con la misma ubicación y nivel de zoom.
-
-### 3. Google Maps - ArcGIS sync
-
-| Modo Claro                                                        | Modo Oscuro                                                           |
-| ----------------------------------------------------------------- | --------------------------------------------------------------------- |
-| ![Traer de Maps](SIGUE%20Google-Sync/Images/BrowserUpdated32.png) | ![Traer de Maps](SIGUE%20Google-Sync/DarkImages/BrowserUpdated32.png) |
-
-Esta función permite importar la vista actual de Google Maps a ArcGIS Pro. Al activarla, el mapa de ArcGIS se centra y ajusta automáticamente según la ubicación y el nivel de zoom que tenga Google Maps.
-
-#### ¿Como usar esta herramienta?
-
-![ArcGIS - Google Maps sync](docs/images/GMaps-ArcGIS-GIF.gif)
-
-1. Asegúrate de tener Google Maps abierto en tu navegador.
-2. Navega a la ubicación deseada en Google Maps.
-3. Haz clic en el botón "Traer de Maps" en ArcGIS Pro.
-
-> [!WARNING]
-> Esta función solo funciona si la ventana emergente de Google Maps, abierta por el Add-In, sigue activa y visible en tu navegador. Si la cierras o navegas a otra página, la sincronización no será posible.
-
 ## Requisitos del sistema
 
-- ArcGIS Pro 3.4 o superior
-- .NET 8 Runtime (requerido por ArcGIS Pro)
-- Un navegador web compatible (Google Chrome o Mozilla Firefox)
+### Requisitos obligatorios
 
-> [!IMPORTANT]
-> Consulta los requisitos oficiales de ArcGIS Pro para tu sistema operativo y hardware aquí: [ArcGIS Pro System Requirements](https://pro.arcgis.com/en/pro-app/latest/get-started/arcgis-pro-system-requirements.htm)
+* Google Chrome instalado (versión estable más reciente recomendada) o Mozilla Firefox
+
+* ArcGIS Pro 3.4 o superior ejecutándose correctamente
+
+* .NET 8 Runtime (normalmente incluido con ArcGIS Pro)
+
+* Conexión a Internet activa
 
 ## Instalación
 
-### Instalación del Add-In
+### Paso 1: Obtencion del archivo (Add-In)
 
-1. Solicita el archivo `.esriAddinX` al responsable del proyecto o compílalo desde el código fuente.
-2. Cierra ArcGIS Pro si está abierto.
-3. Haz doble clic en el archivo `.esriAddinX` para registrar el Add-In en ArcGIS Pro.
-4. Inicia ArcGIS Pro y verifica que la pestaña "GMaps" aparece en la Ribbon (Cinta de opciones) del entorno de trabajo.
+Recibirás el archivo de instalación con extensión .esriAddinX a través de uno de estos métodos:
 
-### Configuración del WebDriver
+* USB: Archivo físico en una unidad USB
+
+* Correo electrónico: Archivo adjunto o enlace de descarga
+
+* Red compartida: Acceso a carpeta de red compartida
+
+Guarda el archivo GMaps-Sync.esriAddinX en una ubicación accesible como:
+
+* Escritorio
+
+* Carpeta de Descargas
+
+* Documentos
+
+### Paso 2: Instalación del complemento
+
+1. Cierra ArcGIS Pro completamente si está ejecutándose
+
+2. Navega hasta la ubicación del archivo GMaps-Sync.esriAddinX
+
+3. Haz doble clic en el archivo
+
+4. Aparecerá el instalador de Add-In de ArcGIS Pro
+
+5. Haz clic en "Instalar" y acepte los términos si se le solicitan
+
+6. Espera a que aparezca el mensaje de "Instalación completada"
+
+7. Inicia ArcGIS Pro
+
+
+### Paso 3:Configuración del WebDriver
 
 Para que el Add-In funcione correctamente, es necesario configurar el WebDriver:
 
@@ -86,10 +64,167 @@ Para que el Add-In funcione correctamente, es necesario configurar el WebDriver:
    - [GeckoDriver](https://github.com/mozilla/geckodriver/releases) para Mozilla Firefox
 
 2. Abre ArcGIS Pro y ve a la configuración del Add-In:
-
    - En el menú, selecciona "Proyecto" > "Opciones" > "GMaps"
    - Selecciona el navegador que utilizarás
    - Especifica la ruta donde se encuentra el archivo del WebDriver
+
+### Paso 4: Verificación de la instalación
+
+Después de iniciar ArcGIS Pro:
+
+1. Abre o crea un proyecto
+
+2. En la cinta de opciones principal, buscaa la pestaña "GMaps"
+
+3. Si la pestaña está visible, la instalación fue exitosa
+
+
+## Configuración 
+
+### Configuración inicial obligatoria
+
+Al utilizar el Add-In por primera vez, es necesario realizar una configuración inicial para asegurar su correcto funcionamiento. 
+
+Sigue estos pasos:
+
+1. Acceder a la Configuración del Add-In:
+
+   - Abra ArcGIS Pro.
+   - En la esquina superior izquierda, haga clic en "Project".
+   - En el menú desplegable, seleccione "Options".
+
+2. Navegar a la Sección GMaps:
+
+- En la ventana de Options, localiza y haz clic en la categoría "GMaps" en el panel izquierdo.
+
+3. Seleccionar navegador y configurar WebDriver:
+
+- En el panel de configuración de GMaps:
+   - Selecciona tu navegador preferido: Elije entre Google Chrome o Mozilla Firefox desde el menú desplegable.
+   - Especifica la ruta del WebDriver: Haz clic en "Examinar" o "Browse" y navega hasta la ubicación donde tienes guardado el archivo del controlador (WebDriver) correspondiente a su navegador.
+
+      - Para Chrome: chromedriver.exe
+
+      - Para Firefox: geckodriver.exe
+
+![add-ln](docs\images\project-options-gmaps.png) 
+
+4. Verificar la configuración:
+
+- Haz clic en "Probar Conexión" o "Test Connection" para confirmar que la configuración es correcta y que el Add-In puede comunicarse con el navegador.
+
+- Si la prueba es exitosa, aparecerá un mensaje de confirmación. Haz clic en "Aceptar" o "OK" para guardar la configuración.
+
+Nota: Es fundamental que la versión del WebDriver coincida exactamente con la versión de su navegador para evitar errores. Si no tiene el WebDriver, consulte la sección "Requisitos del Sistema" para obtener enlaces de descarga.
+
+
+## Cómo usar el Add-ln GMaps
+
+Una vez configurado correctamente, el Add-In ofrece tres herramientas principales accesibles desde la pestaña "GMaps" en la cinta de opciones de ArcGIS Pro. A continuación, se detalla el funcionamiento de cada una:
+
+
+### 1. Google Street View
+
+Propósito: Obtener una vista de Street View de cualquier punto en su mapa.
+
+
+
+| Modo Claro                                                                  | Modo Oscuro                                                                     |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| ![Herramienta Street View](SIGUE%20Google-Sync/Images/StreetViewTool32.png) | ![Herramienta Street View](SIGUE%20Google-Sync/DarkImages/StreetViewTool32.png) |
+
+Pasos para usar:
+
+1. Activar la Herramienta: En la pestaña GMaps, haga clic en el botón "Street View".
+
+2. Seleccionar Punto y Dirección:
+
+   - En el mapa, haga clic y mantenga presionado el botón del ratón en la ubicación deseada.
+   - Sin soltar, arrastre el ratón para definir la dirección de visualización. Verá una línea amarilla que indica la dirección.
+   - Suelta el botón del ratón para confirmar.
+
+Resultado: Se abrirá automáticamente una ventana de su navegador predeterminado (Chrome/Firefox) mostrando la vista de Google Street View para la ubicación y dirección seleccionadas.
+
+![muestra](docs\images\muestra.png)
+
+
+#### 2. Sincronización en tiempo real: ArcGIS Pro - Google Maps
+
+Propósito: Mantener una ventana de Google Maps constantemente sincronizada con su vista actual en ArcGIS Pro. Cada vez que mueva el mapa en ArcGIS, Google Maps se actualizará automáticamente.
+
+![Street View](docs/images/StreetView-GIF.gif)
+
+Pasos para usar:
+
+1. Activar sincronización continua: En la pestaña GMaps, haga clic en el botón "Abrir en Maps".
+
+2. Navegar en ArcGIS Pro:
+
+- Se abrirá una ventana de Google Maps en su navegador.
+
+- A partir de este momento, cada vez que:
+   - Mueva el mapa (pan)
+   - Haga zoom in/out
+   - Cambie la extensión visible
+
+- Google Maps se actualizará en tiempo real para reflejar exactamente la misma vista.
+
+3. Modo de sincronización activa:
+
+- El botón "Abrir en Maps" permanecerá resaltado indicando que la sincronización está activa.
+
+- Puede continuar trabajando en ArcGIS Pro normalmente mientras Google Maps muestra paralelamente la misma vista.
+
+
+![ArcGIS - Google Maps sync](docs/images/ArcGIS-GMaps-GIF.gif)
+
+
+
+   Nota: Esta sincronización unidireccional (ArcGIS → Maps) se mantendrá activa hasta que cierre la ventana del navegador o desactive manualmente la herramienta.
+
+
+
+### 3. Sincronización puntual: Google Maps - ArcGIS sync
+
+Propósito: Traer de manera puntual la vista actual de Google Maps a ArcGIS Pro.
+
+
+
+| Modo Claro                                                        | Modo Oscuro                                                           |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------- |
+| ![Traer de Maps](SIGUE%20Google-Sync/Images/BrowserUpdated32.png) | ![Traer de Maps](SIGUE%20Google-Sync/DarkImages/BrowserUpdated32.png) |
+
+Esta función permite importar la vista actual de Google Maps a ArcGIS Pro. Al activarla, el mapa de ArcGIS se centra y ajusta automáticamente según la ubicación y el nivel de zoom que tenga Google Maps.
+
+#### ¿Como usar esta herramienta?
+
+1. Prerrequisito: Debe tener la sincronización activa (ventana de Maps abierta mediante "Abrir en Maps").
+
+2. Navegar en Google Maps:
+
+- Utilice la ventana de Google Maps para:
+
+   - Moverse a una nueva ubicación
+
+   - Hacer zoom a un nivel diferente
+
+   - Cambiar a vista Satélite/Híbrida
+
+   - Explorar puntos de interés
+
+3. Actualizar ArcGIS Pro:
+
+- En la pestaña GMaps, haga clic en el botón "Traer de Maps".
+
+- Resultado inmediato: La vista en ArcGIS Pro se ajustará automáticamente para coincidir exactamente con lo que está viendo en Google Maps.
+
+![ArcGIS - Google Maps sync](docs/images/GMaps-ArcGIS-GIF.gif)
+
+
+> [!WARNING]
+> Esta función solo funciona si la ventana emergente de Google Maps, abierta por el Add-In, sigue activa y visible en tu navegador. Si la cierras o navegas a otra página, la sincronización no será posible.
+
+
 
 ## Solución de problemas
 
