@@ -163,9 +163,9 @@ Pasos para usar:
 - Se abrirá una ventana de Google Maps en su navegador.
 
 - A partir de este momento, cada vez que:
-   - Mueva el mapa (pan)
-   - Haga zoom in/out
-   - Cambie la extensión visible
+   - Muevas el mapa (pan)
+   - Hagas zoom in/out
+   - Cambies la extensión visible
 
 - Google Maps se actualizará en tiempo real para reflejar exactamente la misma vista.
 
@@ -202,7 +202,7 @@ Esta función permite importar la vista actual de Google Maps a ArcGIS Pro. Al a
 
 2. Navegar en Google Maps:
 
-- Utilice la ventana de Google Maps para:
+- Utiliza la ventana de Google Maps para:
 
    - Moverse a una nueva ubicación
 
@@ -214,7 +214,7 @@ Esta función permite importar la vista actual de Google Maps a ArcGIS Pro. Al a
 
 3. Actualizar ArcGIS Pro:
 
-- En la pestaña GMaps, haga clic en el botón "Traer de Maps".
+- En la pestaña GMaps, haz clic en el botón "Traer de Maps".
 
 - Resultado inmediato: La vista en ArcGIS Pro se ajustará automáticamente para coincidir exactamente con lo que está viendo en Google Maps.
 
